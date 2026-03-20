@@ -1,11 +1,13 @@
-﻿namespace TinyCalculator
+﻿using System.Text;
+
+namespace TinyCalculator
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("== Tiny Calculator ==");
-
+            Console.OutputEncoding = Encoding.UTF8;
             int a = ReadOperand("Operand 1");
 
             Console.ResetColor();
@@ -20,8 +22,7 @@
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"Rechnung: {a} * {b} = {a * b}");
             Console.ForegroundColor = ConsoleColor.Yellow;
-            if (b == 0) Console.WriteLine($"Rechnung: {a} / {b} = undefiniert/unendlich");
-            else Console.WriteLine($"Rechnung: {a} / {b} = {(double)a / b}");
+            Console.WriteLine($"Rechnung: {a} / {b} = {(double)a / b}");
             Console.ResetColor();
         }
         static int ReadOperand(string title)
