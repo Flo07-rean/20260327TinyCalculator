@@ -6,9 +6,13 @@
         {
             Console.WriteLine("== Tiny Calculator ==");
 
-            int a = 5;
-            int b = 10;
-            Console.WriteLine($"{a}+{b}={a+b}");
+            Console.Write("Gib ersten Summand ein: ");
+            int a = int.Parse(Console.ReadLine());
+
+            Console.Write("Gib zweiten Summand ein: ");
+            int b = int.Parse(Console.ReadLine());
+            
+            Console.WriteLine($"Rechnung: {a} + {b} = {a + b}");
         }
     }
 }
