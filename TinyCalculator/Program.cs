@@ -4,18 +4,15 @@
     {
         static void Main(string[] args)
         {
-            Console.ForegroundColor = ConsoleColor.White;
-
             Console.WriteLine("== Tiny Calculator ==");
 
-            Console.Write("Gib ersten Operand ein: ");
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            int a = int.Parse(Console.ReadLine());
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.Write("Gib zweiten Operand ein: ");
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            int b = int.Parse(Console.ReadLine());
+            int a = ReadOperand("Operand 1");
+
+            Console.ResetColor();
+
+            int b = ReadOperand("Operand 2"); ;
             
+
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"Rechnung: {a} + {b} = {a + b}");
             Console.ForegroundColor = ConsoleColor.Cyan;
@@ -25,8 +22,22 @@
             Console.ForegroundColor = ConsoleColor.Yellow;
             if (b == 0) Console.WriteLine($"Rechnung: {a} / {b} = undefiniert/unendlich");
             else Console.WriteLine($"Rechnung: {a} / {b} = {a / b}");
-            Console.ForegroundColor = ConsoleColor.White;
-
+            Console.ResetColor();
+        }
+        static int ReadOperand(string title)
+        {
+            Console.Write($"{title}:");
+            int a;
+            while (!int.TryParse(Console.ReadLine(), out a))
+            {
+                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"Fehler: {title} ist keine Zahl");
+                Console.ResetColor();
+                Console.Write($"{title}: ");
+                Console.ForegroundColor = ConsoleColor.Magenta;
+            }
+            return a;
         }
     }
 }
