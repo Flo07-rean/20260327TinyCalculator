@@ -21,13 +21,14 @@
             Console.WriteLine($"Rechnung: {a} * {b} = {a * b}");
             Console.ForegroundColor = ConsoleColor.Yellow;
             if (b == 0) Console.WriteLine($"Rechnung: {a} / {b} = undefiniert/unendlich");
-            else Console.WriteLine($"Rechnung: {a} / {b} = {a / b}");
+            else Console.WriteLine($"Rechnung: {a} / {b} = {(double)a / b}");
             Console.ResetColor();
         }
         static int ReadOperand(string title)
         {
             Console.Write($"{title}:");
             int a;
+            Console.ForegroundColor = ConsoleColor.Magenta;
             while (!int.TryParse(Console.ReadLine(), out a))
             {
                 Console.ResetColor();
