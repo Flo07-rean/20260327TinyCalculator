@@ -28,9 +28,14 @@ namespace TinyCalculator
         static int ReadOperand(string title)
         {
             Console.Write($"{title}:");
+<<<<<<< HEAD
             int a;
             Console.ForegroundColor = ConsoleColor.Magenta;
             while (!int.TryParse(Console.ReadLine(), out a))
+=======
+            int operand;
+            while (!int.TryParse(Console.ReadLine(), out operand))
+>>>>>>> inprove-error-handling
             {
                 Console.ResetColor();
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -39,7 +44,7 @@ namespace TinyCalculator
                 Console.Write($"{title}: ");
                 Console.ForegroundColor = ConsoleColor.Magenta;
             }
-            return a;
+            return operand;
         }
     }
 }
