@@ -23,7 +23,10 @@ namespace TinyCalculator
             Console.WriteLine($"Rechnung: {a} * {b} = {a * b}");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine($"Rechnung: {a} / {b} = {(double)a / b}");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"Rechnung: {a} ^ {b} = {Math.Pow(a,b) }");
             Console.ResetColor();
+
         }
         static int ReadOperand(string title)
         {
