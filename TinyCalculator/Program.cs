@@ -15,7 +15,9 @@
             Console.WriteLine($"Rechnung: {a} + {b} = {a + b}");
             Console.WriteLine($"Rechnung: {a} - {b} = {a - b}");
             Console.WriteLine($"Rechnung: {a} * {b} = {a * b}");
-            Console.WriteLine($"Rechnung: {a} / {b} = {a / b}");
+
+            if (b == 0) Console.WriteLine($"Rechnung: {a} / {b} = undefiniert/unendlich");
+            else Console.WriteLine($"Rechnung: {a} / {b} = {a / b}");
         }
     }
 }
