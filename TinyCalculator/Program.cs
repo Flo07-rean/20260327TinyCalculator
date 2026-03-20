@@ -27,8 +27,8 @@
         static int ReadOperand(string title)
         {
             Console.Write($"{title}:");
-            int a;
-            while (!int.TryParse(Console.ReadLine(), out a))
+            int operand;
+            while (!int.TryParse(Console.ReadLine(), out operand))
             {
                 Console.ResetColor();
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -37,7 +37,7 @@
                 Console.Write($"{title}: ");
                 Console.ForegroundColor = ConsoleColor.Magenta;
             }
-            return a;
+            return operand;
         }
     }
 }
