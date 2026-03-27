@@ -73,7 +73,6 @@ namespace TinyCalculator
                     out result);
             }
 
-            // normale Zahl
             return int.TryParse(input, out result);
         }
 
